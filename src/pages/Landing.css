@@ -1,0 +1,76 @@
+.landing-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at center, #1a1a2e 0%, #16213e 100%);
+  color: white;
+  padding: 2rem;
+  text-align: center;
+}
+
+.landing-content {
+  max-width: 500px;
+  width: 100%;
+}
+
+.album-preview {
+  margin-bottom: 2rem;
+  perspective: 1000px;
+}
+
+.cover-img {
+  width: 80%;
+  max-width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  transform: rotateY(-10deg) rotateX(5deg);
+  transition: transform 0.5s ease;
+}
+
+.cover-img:hover {
+  transform: rotateY(0deg) rotateX(0deg) scale(1.05);
+}
+
+.landing-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 800;
+  background: linear-gradient(45deg, #ffd700, #ff8c00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.landing-text p {
+  color: #a0a0c0;
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+}
+
+.start-btn {
+  background: linear-gradient(135deg, #e41e2b 0%, #b31621 100%);
+  color: white;
+  border: none;
+  padding: 1rem 3rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px rgba(228, 30, 43, 0.3);
+}
+
+.start-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(228, 30, 43, 0.5);
+}
+
+.start-btn:active {
+  transform: translateY(-1px);
+}
+
+@media (max-width: 480px) {
+  .landing-text h1 {
+    font-size: 2rem;
+  }
+}
