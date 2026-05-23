@@ -30,7 +30,7 @@ function App() {
     );
   }
 
-  const mainEmail = import.meta.env.VITE_MAIN_EMAIL || 'familia@exemplo.com';
+  const mainEmail = import.meta.env.VITE_MAIN_EMAIL || 'meyckjr@oticasparissul.com.br';
   const isMaster = user && user.email === mainEmail;
 
   return (
