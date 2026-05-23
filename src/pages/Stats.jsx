@@ -1,11 +1,16 @@
 import { useStickers } from '../context/StickerContext';
+import { useNavigate } from 'react-router-dom';
 import './Stats.css';
 
-import { LogOut } from 'lucide-react';
+import { LogOut, UserPlus, Shield } from 'lucide-react';
 
 export default function Stats() {
-  const { stats, logout } = useStickers();
+  const navigate = useNavigate();
+  const { stats, logout, user } = useStickers();
   const percentage = ((stats.owned / stats.total) * 100).toFixed(1);
+
+  const mainEmail = import.meta.env.VITE_MAIN_EMAIL || 'familia@exemplo.com';
+  const isMaster = user && user.email === mainEmail;
 
   return (
     <div className="page-container">
@@ -51,7 +56,21 @@ export default function Stats() {
           </div>
         </div>
 
-
+        {isMaster && (
+          <div className="admin-section">
+            <h2>
+              <Shield size={20} />
+              Painel do Administrador
+            </h2>
+            <p>
+              Você está logado como a conta Master. Como administrador, você pode gerenciar a criação de novos álbuns para os amigos do seu filho.
+            </p>
+            <button className="admin-btn" onClick={() => navigate('/register')}>
+              <UserPlus size={18} />
+              Cadastrar Novo Amigo
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );
