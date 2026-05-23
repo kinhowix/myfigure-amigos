@@ -40,7 +40,7 @@ export const StickerProvider = ({ children }) => {
     if (!user) return;
 
     console.log("Setting up Firestore listener for user:", user.email);
-    const mainEmail = import.meta.env.VITE_MAIN_EMAIL || 'familia@exemplo.com';
+    const mainEmail = import.meta.env.VITE_MAIN_EMAIL || 'meyckjr@oticasparissul.com.br';
     const albumId = user.email === mainEmail ? 'familia' : user.uid;
     const albumRef = doc(db, 'albums', albumId);
 
@@ -111,7 +111,7 @@ export const StickerProvider = ({ children }) => {
   // Actions
   const updateFirebase = async (code, stickerData) => {
     if (!user) return;
-    const mainEmail = import.meta.env.VITE_MAIN_EMAIL || 'familia@exemplo.com';
+    const mainEmail = import.meta.env.VITE_MAIN_EMAIL || 'meyckjr@oticasparissul.com.br';
     const albumId = user.email === mainEmail ? 'familia' : user.uid;
     const albumRef = doc(db, 'albums', albumId);
     try {
